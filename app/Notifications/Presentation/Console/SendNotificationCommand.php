@@ -70,8 +70,8 @@ final class SendNotificationCommand extends Command
         NotificationService $notifier,
         UsersRepository $users,
         MessageRandomizer $randomizer,
-        ResponseTransformer $transformer)
-    {
+        ResponseTransformer $transformer
+    ) {
         parent::__construct();
         
         $this->notifier = $notifier;

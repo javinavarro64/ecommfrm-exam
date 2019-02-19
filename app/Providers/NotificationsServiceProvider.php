@@ -62,13 +62,13 @@ final class NotificationsServiceProvider extends ServiceProvider
         // SendNotificationController bindings
         $this->app->when(SendNotificationController::class)
             ->needs(NotificationService::class)
-            ->give(function() {
+            ->give(function () {
                 return new NotificationService(resolve('smtp'));
             });
         
         $this->app->when(SendNotificationController::class)
             ->needs(ResponseTransformer::class)
-            ->give(function() {
+            ->give(function () {
                 return new JsonResponseTransformer();
             });
         

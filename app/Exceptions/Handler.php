@@ -78,7 +78,7 @@ final class Handler extends ExceptionHandler
     }
     
     /**
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return boolean
      */
@@ -88,7 +88,7 @@ final class Handler extends ExceptionHandler
     }
     
     /**
-     * 
+     *
      * @param \Exception $e
      * @return boolean
      */
@@ -98,7 +98,7 @@ final class Handler extends ExceptionHandler
     }
     
     /**
-     * 
+     *
      * @param \Exception $e
      * @return boolean
      */

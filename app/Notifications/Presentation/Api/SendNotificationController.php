@@ -60,8 +60,8 @@ final class SendNotificationController extends AbstractController
         NotificationService $notifier,
         UsersRepository $users,
         MessageRandomizer $randomizer,
-        ResponseTransformer $transformer)
-    {
+        ResponseTransformer $transformer
+    ) {
         $this->notifier = $notifier;
         $this->users = $users;
         $this->randomizer = $randomizer;
@@ -76,13 +76,11 @@ final class SendNotificationController extends AbstractController
     public function sendNotification($id)
     {
         try {
-            
             $user = $this->users->find($id);
             $message = $this->randomizer->get();
             $result = $this->notifier->notify($user, $message);
             
             info(sprintf("Notification sended to %s", $user->getEmail()));
-            
         } catch (UserNotFound $ex) {
             throw new ApiException(404, $ex->getMessage(), $ex);
         } catch (SendMessageFailed $ex) {
