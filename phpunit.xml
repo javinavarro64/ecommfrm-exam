@@ -9,8 +9,8 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+        <testsuite name="Notifications">
+            <directory suffix="Test.php">./tests/Notifications</directory>
         </testsuite>
 
         <testsuite name="Unit">
