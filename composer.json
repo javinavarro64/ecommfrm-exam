@@ -40,6 +40,9 @@
         ],
         "check-psr": [
             "@php vendor/bin/php-cs-fixer fix app --dry-run -v --using-cache=no --rules=@PSR2"
+        ],
+        "check-security": [
+            "@php vendor/bin/security-checker security:check"
         ]
     },
     "config": {
