@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Notifications\Presentation\Console\SendNotificationCommand;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -12,16 +13,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        SendNotificationCommand::class
     ];
-
-    /**
-     * Register the commands for the application.
-     *
-     * @return void
-     */
-    protected function commands()
-    {
-        $this->load(__DIR__.'/Commands');
-    }
 }

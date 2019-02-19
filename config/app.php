@@ -165,14 +165,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AuthServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\NotificationsServiceProvider::class
 
     ],
 
