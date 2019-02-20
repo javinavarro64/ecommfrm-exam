@@ -7,7 +7,7 @@
  *
  * Javier Navarro
  */
-namespace App\Notifications\Domain;
+namespace App\Notifications\Infraestructure;
 
 /**
  *

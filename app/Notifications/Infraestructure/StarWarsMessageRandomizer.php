@@ -9,8 +9,6 @@
  */
 namespace App\Notifications\Infraestructure;
 
-use App\Notifications\Domain\MessageRandomizer;
-
 /**
  *
  * @author Javier Navarro
@@ -39,7 +37,7 @@ final class StarWarsMessageRandomizer implements MessageRandomizer
      *
      * {@inheritDoc}
      *
-     * @see \App\Notifications\Domain\MessageRandomizer::get()
+     * @see \App\Notifications\Infraestructure\MessageRandomizer::get()
      */
     public function get()
     {

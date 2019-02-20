@@ -7,19 +7,16 @@
  *
  * Javier Navarro
  */
-namespace App\Notifications\Domain;
+namespace App\Notifications\Presentation;
+
+use Illuminate\Console\Command;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 
 /**
  *
  * @author Javier Navarro
  */
-interface MessageRandomizer
+abstract class AbstractCommand extends Command
 {
-    
-    /**
-     * Gets a random text message
-     *
-     * @return string
-     */
-    public function get();
+    use DispatchesJobs;
 }

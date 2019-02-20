@@ -9,8 +9,6 @@
  */
 namespace App\Notifications\Infraestructure;
 
-use App\Notifications\Domain\MailerProvider;
-
 /**
  *
  * @author Javier Navarro
@@ -22,7 +20,7 @@ class SmtpProvider implements MailerProvider
      *
      * {@inheritdoc}
      *
-     * @see \App\Notifications\Domain\MailerProvider::send()
+     * @see \App\Notifications\Infraestructure\MailerProvider::send()
      */
     public function send($email, $message)
     {

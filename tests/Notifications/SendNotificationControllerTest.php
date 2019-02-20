@@ -9,8 +9,8 @@
  */
 namespace Tests\Notifications;
 
-use App\Notifications\Domain\MailerProvider;
-use App\Notifications\Domain\MessageRandomizer;
+use App\Notifications\Infraestructure\MailerProvider;
+use App\Notifications\Infraestructure\MessageRandomizer;
 use Tests\TestCase;
 
 /**
@@ -22,7 +22,7 @@ class SendNotificationControllerTest extends TestCase
     
     /**
      * 
-     * @var \App\Notifications\Domain\MessageRandomizer|\Mockery\MockInterface
+     * @var \App\Notifications\Infraestructure\MessageRandomizer|\Mockery\MockInterface
      */
     private $randomizer;
     

@@ -6,12 +6,12 @@
  */
 namespace Tests\Notifications;
 
-use App\Notifications\Domain\MessageRandomizer;
-use App\Notifications\Domain\Exceptions\SendMessageFailed;
 use App\Notifications\Domain\Exceptions\UserNotFound;
+use App\Notifications\Infraestructure\MailerProvider;
+use App\Notifications\Infraestructure\MessageRandomizer;
+use App\Notifications\Infraestructure\Exceptions\SendMessageFailed;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
-use App\Notifications\Domain\MailerProvider;
 
 /**
  *
@@ -22,7 +22,7 @@ class SendNotificationCommandTest extends TestCase
     
     /**
      * 
-     * @var \App\Notifications\Domain\MessageRandomizer|\Mockery\MockInterface
+     * @var \App\Notifications\Infraestructure\MessageRandomizer|\Mockery\MockInterface
      */
     private $randomizer;
     

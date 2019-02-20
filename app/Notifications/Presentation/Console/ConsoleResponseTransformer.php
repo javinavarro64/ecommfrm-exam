@@ -19,7 +19,7 @@ use Illuminate\Console\OutputStyle;
  */
 final class ConsoleResponseTransformer implements ResponseTransformer
 {
-
+    
     /**
      *
      * @var \Illuminate\Console\OutputStyle

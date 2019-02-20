@@ -13,17 +13,13 @@ namespace App\Notifications\Infraestructure;
  *
  * @author Javier Navarro
  */
-class SesProvider implements MailerProvider
+interface MessageRandomizer
 {
-
+    
     /**
+     * Gets a random text message
      *
-     * {@inheritdoc}
-     *
-     * @see \App\Notifications\Infraestructure\MailerProvider::send()
+     * @return string
      */
-    public function send($email, $message)
-    {
-        return true;
-    }
+    public function get();
 }

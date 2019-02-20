@@ -9,10 +9,10 @@
  */
 namespace App\Providers;
 
-use App\Notifications\Domain\MessageRandomizer;
-use App\Notifications\Domain\NotificationService;
 use App\Notifications\Domain\UserEntity;
 use App\Notifications\Domain\UsersRepository;
+use App\Notifications\Infraestructure\MailerType;
+use App\Notifications\Infraestructure\MessageRandomizer;
 use App\Notifications\Infraestructure\SesProvider;
 use App\Notifications\Infraestructure\SmtpProvider;
 use App\Notifications\Infraestructure\StarWarsMessageRandomizer;
@@ -51,20 +51,13 @@ final class NotificationsServiceProvider extends ServiceProvider
             return new StarWarsMessageRandomizer();
         });
         
-        $this->app->bind('smtp', function () {
+        $this->app->bind(MailerType::SMTP, function () {
             return new SmtpProvider();
         });
         
-        $this->app->bind('ses', function () {
+        $this->app->bind(MailerType::SES, function () {
             return new SesProvider();
         });
-        
-        // SendNotificationController bindings
-        $this->app->when(SendNotificationController::class)
-            ->needs(NotificationService::class)
-            ->give(function () {
-                return new NotificationService(resolve('smtp'));
-            });
         
         $this->app->when(SendNotificationController::class)
             ->needs(ResponseTransformer::class)
@@ -72,13 +65,6 @@ final class NotificationsServiceProvider extends ServiceProvider
                 return new JsonResponseTransformer();
             });
         
-        // SendNotificationCommand bindings
-        $this->app->when(SendNotificationCommand::class)
-            ->needs(NotificationService::class)
-            ->give(function () {
-                return new NotificationService(resolve('ses'));
-            });
-            
         $this->app->when(SendNotificationCommand::class)
             ->needs(ResponseTransformer::class)
             ->give(function () {

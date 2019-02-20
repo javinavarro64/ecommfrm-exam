@@ -7,7 +7,7 @@
  *
  * Javier Navarro
  */
-namespace App\Notifications\Domain\Exceptions;
+namespace App\Notifications\Infraestructure\Exceptions;
 
 /**
  *
